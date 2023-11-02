@@ -19,8 +19,8 @@ class Startup: KoinComponent {
     private val currencyConverter: CurrencyConverter by inject()
     private val search: SearchApi by inject()
 
-    suspend fun fetchAndProcessTransactions(accountId: String, bankName: String?) = Unit
-        /*nordigen
+    suspend fun fetchAndProcessTransactions(accountId: String, bankName: String?) =
+        nordigen
             .fetchTransactions(accountId)
             .transactions.booked
             .filterNot { db.exists(it.transactionId) }
@@ -68,5 +68,5 @@ class Startup: KoinComponent {
                 } catch(e: Exception) {
                     e.printStackTrace()
                 }
-        }*/
+        }
 }
